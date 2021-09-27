@@ -12,7 +12,7 @@ let textAlign: "left" | "right" | "center";
 
 textAlign = "rtl"; //! X : textAlign value can be only "left" | "right" | "center"
 
-//******************************************* Type Aliases *******************************************************/
+//******************************************* Type Aliases (custom types) *******************************************************/
 
 // type CustomTypeName = anyType;
 
