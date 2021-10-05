@@ -24,6 +24,7 @@ const dep = new Department("12a", "info");
 
 class ITDepartment extends Department {
   private lastReport: string;
+  static fiscalYear = 2021;
   get lastReportt() {
     return this.lastReport;
   }
@@ -35,3 +36,4 @@ class ITDepartment extends Department {
 const it = new ITDepartment("d2", []);
 
 console.log(it.lastReportt);
+console.log(ITDepartment.fiscalYear);
