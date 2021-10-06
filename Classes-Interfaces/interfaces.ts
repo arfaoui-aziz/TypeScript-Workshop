@@ -5,7 +5,7 @@ interface IPerson {
 }
 
 class Person implements IPerson {
-  constructor(public name?: string, public age: number) {}
+  constructor(public name: string, public age: number) {}
 
   greet(phrase: string) {
     console.log(phrase);
