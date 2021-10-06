@@ -36,13 +36,14 @@ class Truck {
   }
 }
 
+type Vehicle = Car | Truck;
 const car = new Car();
 const truck = new Truck();
 
-const driveInfo = (ins) => {
-  if (ins instanceof Car) {
-    ins.drive();
+const driveInfo = (vehicle: Vehicle) => {
+  if (vehicle instanceof Car) {
+    vehicle.drive();
   } else {
-    ins.loadCargo(100);
+    vehicle.loadCargo(100);
   }
 };
