@@ -6,6 +6,7 @@ function Logger(constructor: Function) {
 //! Decorator Factories
 
 function Logger2(logString: string) {
+  console.log("Logger Factory");
   return function (constructor: Function) {
     console.log(logString);
     console.log(constructor);
@@ -13,6 +14,7 @@ function Logger2(logString: string) {
 }
 
 function WithTemplate(template: string, hookId: string) {
+  console.log("With Template Factory");
   return function (constructor: any) {
     const hookEl = document.querySelector(hookId);
     const p = new constructor();
@@ -31,5 +33,34 @@ class Person {
 
   constructor(name: string) {
     console.log(this.name);
+  }
+}
+
+//! Property Decorator
+
+function Log(target: any, propertyName: string) {
+  console.log(target, propertyName); //objectPrototype, title
+}
+
+class Product {
+  @Log
+  title: string;
+  private _price: number;
+
+  constructor(t: string, p: number) {
+    this.title = t;
+    this._price = p;
+  }
+
+  set price(val: number) {
+    if (val > 0) {
+      this._price = val;
+    } else {
+      throw new Error("Invalid price");
+    }
+  }
+
+  getPriceWithTax(tax: number) {
+    return this.price * (1 + tax);
   }
 }
