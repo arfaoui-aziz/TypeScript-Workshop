@@ -15,7 +15,7 @@ const mergedObj = mergeObjects({ name: "aziz" }, { age: 23 });
 // if we try to access any propety TS will show an error because TS know only that our function
 // return an object but don't know the properties of the returned object
 
-console.log(mergedObj.name);
+//! console.log(mergedObj.name);  ERROR:
 
 //! Solution 1
 
