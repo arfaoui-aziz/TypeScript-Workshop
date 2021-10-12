@@ -127,3 +127,5 @@ class Person2 {
     console.log(this.name2);
   }
 }
+
+
