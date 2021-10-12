@@ -95,3 +95,35 @@ class Product {
     return this.price * (1 + tax);
   }
 }
+
+//TODO:  Returning  & Changing a class using a Decorator
+
+function WithTemplate2(template: string, hookId: string) {
+  console.log("With Template Factory");
+  //{new } =to specifie a function we call with new keyword (constructor)
+  return function <T extends { new (...args: any[]): { name2: string } }>(
+    originalConstructor: T
+  ) {
+    console.log("Decorator");
+    return class extends originalConstructor {
+      constructor(..._: any) {
+        super();
+        //here any logic to add to constructor
+        const hookEl = document.querySelector(hookId);
+        if (hookEl) {
+          hookEl.innerHTML = template;
+          document.querySelector("h1")!.textContent = this.name2;
+        }
+      }
+    };
+  };
+}
+
+@WithTemplate("<h1>My Person Class</h1>", "app")
+class Person2 {
+  private name2 = "aziz";
+
+  constructor(name: string) {
+    console.log(this.name2);
+  }
+}
