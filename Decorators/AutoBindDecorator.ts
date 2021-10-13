@@ -26,6 +26,6 @@ class Printer {
 
 const p = new Printer();
 p.showMessage();
-const btn = document.querySelector("button");
+const btn = document.querySelector("button")!;
 
 btn.addEventListener("click", p.showMessage);
