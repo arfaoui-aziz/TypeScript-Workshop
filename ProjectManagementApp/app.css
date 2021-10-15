@@ -127,7 +127,7 @@ button:active {
 }
 
 #app {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  padding: 5rem 0;
+  padding: 5rem 0; */
 }
